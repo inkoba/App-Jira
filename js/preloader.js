@@ -1,5 +1,5 @@
-const preloader = document.querySelector('#preloader')
-const mainContainer = document.querySelector('.content')
+const preloader = document.querySelector('#preloader');
+const mainContainer = document.querySelector('.content');
 
 const closePreloader = () => {
   preloader.style.opacity = 0;
@@ -7,4 +7,3 @@ const closePreloader = () => {
 }
 
 setTimeout(closePreloader, 1000);
-

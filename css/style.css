@@ -58,11 +58,82 @@ body{
     transition: color 0.1s ease 0s;
     cursor: pointer;
     user-select: none;
+    padding-top: 18px;
+}
+
+
+.left-column .about .about-modal:hover{
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.left-column .about .about-modal .about-modal-text{
+    top: -8px;
+    right: 0px;
+    visibility: visible;
+    opacity: 1;
+}
+
+.about-modal-text{
+    position: relative;
+    right: 12px;
+    visibility: hidden;
+    opacity: 0;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 12px;
+    transition: right 0.1s ease 0s, visibility, opacity;
 }
 
 .left-column .about .about-modal i{
     position: absolute;
     left: 18px;
+}
+
+.left-column .search-issues, .left-column .create-issues{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    padding-left: 64px;
+    color: rgb(222, 235, 255);
+    transition: color 0.1s ease 0s;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+
+.left-column .search-issues .search-text, .left-column .create-issues .create-text{
+    position: relative;
+    right: 12px;
+    visibility: hidden;
+    opacity: 0;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 12px;
+    transition: right 0.1s ease 0s, visibility, opacity;
+}
+
+.left-column:hover .search-issues .search-text, .left-column .create-issues .create-text{
+    right: 0px;
+    top: 2px;
+    visibility: visible;
+    opacity: 1;
+}
+
+.left-column .search-issues:hover, .left-column .create-issues:hover {
+    background: rgba(255, 255, 255, 0.1);
+} 
+
+.left-column .search-issues i, .left-column .create-issues i{
+    position: absolute;
+    left: 15px;
+    display: inline-block;
+    font-size: 26px;
+    transform: translate(3px, 1px);
+
 }
 
 .first-block{
@@ -87,6 +158,11 @@ body{
     background: rgb(7, 71, 166);
     transition: all 0.1s ease 0s;
     transform: translateZ(0px);
+}
+
+.second-block .left-column:hover{
+    width: 200px;
+    box-shadow: rgb(0 0 0 / 60%) 0px 0px 50px 0px;
 }
 
 .navbar{
@@ -368,6 +444,16 @@ body{
     padding: 0px 5px;
 }
 
+.basic-content .task-col1 .all-tasks .task-item{
+    will-change: transform;
+    background-color: white;
+    cursor: move;
+    transition: all 200ms;
+    user-select: none;
+    position: relative;
+}
+
+
 [data-rbd-drag-handle-context-id="0"]{
     cursor: -webkit-grab;
     cursor: grab;
@@ -490,4 +576,225 @@ body{
 .content{
     opacity: 0;
     transition: all 0.5s ease;
+}
+
+.over {
+    transform: scale(1.1, 1.1);
+}
+
+.about-block{
+    z-index: 1001;
+    position: fixed;
+    bottom: 20px;
+    left: 74px;
+    width: 300px;
+    border-radius: 3px;
+    background: rgb(255, 255, 255);
+    transform: translateZ(0px);
+    box-shadow: rgb(9 30 66 / 25%) 0px 4px 8px -2px, rgb(9 30 66 / 31%) 0px 0px 1px;
+}
+
+.about-block .about-block-content{
+    padding: 180px 0;
+    text-align: center;
+}
+
+.hide{
+    display: none;
+}
+
+.create-issue{
+    z-index: 1000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden auto;
+}
+
+.create-issue .section-create-issue{
+    min-height: 100%;
+    background: rgba(9, 30, 66, 0.54);
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.create-issue .section-create-issue .content-create-issue{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    max-width: 800px;
+    vertical-align: middle;
+    border-radius: 3px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 5px 10px 0px;
+}
+
+.create-issue .section-create-issue .content-create-issue .info-task{
+    padding: 25px 40px 35px;
+}
+
+.create-issue .section-create-issue .content-create-issue .info-task .title-task{
+    padding-bottom: 15px;
+    font-size: 21px;
+}
+
+.create-issue .section-create-issue .content-create-issue .info-task .issue-task{
+    margin-top: 20px;
+}
+
+.type-task{
+    display: block;
+    padding-bottom: 5px;
+    color: rgb(94, 108, 132);
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.create-issue .section-create-issue .content-create-issue .info-task .issue-task select,
+.create-issue .section-create-issue .content-create-issue .info-task .reporter select,
+.create-issue .section-create-issue .content-create-issue .info-task .assignees select,
+.create-issue .section-create-issue .content-create-issue .info-task .priority select
+{
+    position: relative;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid rgb(223, 225, 230);
+    background: rgb(244, 245, 247);
+    transition: background 0.1s ease 0s;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    min-height: 32px;
+    padding: 5px 5px 5px 10px;
+}
+
+.placeholder-text{
+    padding-top: 6px;
+    color: rgb(94, 108, 132);
+    font-size: 12.5px;
+}
+
+.create-issue .section-create-issue .content-create-issue .info-task .delimiter{
+    margin-top: 22px;
+    border-top: 1px solid rgb(223, 225, 230);
+}
+
+.create-issue .section-create-issue .content-create-issue .info-task .short-summary{
+    margin-top: 20px;
+}
+
+.create-issue .section-create-issue .content-create-issue .info-task .short-summary .input-short-summary{
+    position: relative;
+    display: inline-block;
+    height: 32px;
+    width: 100%;
+}
+
+.create-issue .section-create-issue .content-create-issue .info-task .short-summary .input-short-summary input{
+    height: 100%;
+    width: 100%;
+    padding: 0px 7px;
+    border-radius: 3px;
+    border: 1px solid rgb(223, 225, 230);
+    color: rgb(23, 43, 77);
+    background: rgb(244, 245, 247);
+    transition: background 0.1s ease 0s;
+    font-family: CircularStdBook;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.create-issue .section-create-issue .content-create-issue .info-task .description{
+    margin-top: 20px;
+}
+
+.create-issue .section-create-issue .content-create-issue .info-task .description textarea{
+    border-radius: 0px 0px 4px 4px;
+    border-right: 1px solid rgb(223, 225, 230);
+    border-bottom: 1px solid rgb(223, 225, 230);
+    border-left: 1px solid rgb(223, 225, 230);
+    border-top: 1px solid rgb(223, 225, 230);
+    border-image: initial;
+   /*  border-top: none; */
+    color: rgb(23, 43, 77);
+    font-size: 15px;
+    font-weight: normal;
+    width: 100%;
+    resize: none;
+    min-height: 110px;
+}
+
+.create-issue .section-create-issue .content-create-issue .info-task .reporter,
+.create-issue .section-create-issue .content-create-issue .info-task .assignees,
+.create-issue .section-create-issue .content-create-issue .info-task .priority{
+    margin-top: 20px;
+}
+
+.create-issue .section-create-issue .content-create-issue .info-task .btn-add{
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    padding-top: 30px;
+}
+
+.create-issue .section-create-issue .content-create-issue .info-task .btn-add .add{
+    margin-left: 10px;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 32px;
+    vertical-align: middle;
+    line-height: 1;
+    padding: 0px 12px;
+    white-space: nowrap;
+    border-radius: 3px;
+    transition: all 0.1s ease 0s;
+    appearance: none;
+    cursor: pointer;
+    user-select: none;
+    font-size: 14.5px;
+    color: rgb(255, 255, 255);
+    background: rgb(0, 82, 204);
+    font-weight: normal;
+}
+
+.create-issue .section-create-issue .content-create-issue .info-task .btn-add .cancel{
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 32px;
+    vertical-align: middle;
+    line-height: 1;
+    padding: 0px 12px;
+    white-space: nowrap;
+    border-radius: 3px;
+    transition: all 0.1s ease 0s;
+    appearance: none;
+    cursor: pointer;
+    user-select: none;
+    font-size: 14.5px;
+    background: rgb(255, 255, 255);
+    color: rgb(66, 82, 110);
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+.create-issue .section-create-issue .content-create-issue .info-task .btn-add .cancel:not(:disabled):hover{
+    background: rgb(235, 236, 240);
+}
+
+.create-issue .section-create-issue .content-create-issue .info-task .btn-add .add:not(:disabled):hover{
+    background: rgb(0, 94, 235);
 }

@@ -27,9 +27,18 @@
                             <i class="material-icons current-state medium">device_hub</i>
                         </span>
                     </a>
+                    <div class="search-issues">
+                        <i class="material-icons current-state medium">search</i>
+                        <div class="search-text">Search Issuess</div>
+                    </div>
+                    <div class="create-issues">
+                        <i class="material-icons current-state medium">add</i>
+                        <div class="create-text">Create Issue</div>
+                    </div>
                     <div class="about">
                         <div class="about-modal">
                             <i class="material-icons current-state medium">help_outline</i>
+                            <div class="about-modal-text">About</div>
                         </div>
                     </div>
                 </aside>
@@ -117,7 +126,7 @@
                             <span class="task-counter">5</span>
                         </div>
                         <div class="all-tasks">
-                            <a class="task-item" id="drag1" href="#">
+                            <!-- <a class="task-item" id="drag1" href="#">
                                 <div class="task-info">
                                     <p class="descr">
                                         ца
@@ -172,7 +181,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </a>
+                            </a>-->
                         </div>
                     </div>
 
@@ -214,17 +223,112 @@
 
 
             </div>
+
+            <!--ABout Block-->
+            <div class="about-block hide">
+                <div class="about-block-content">
+                    <p>About</p>
+                </div>
+            </div>
+
+
+            <!--Create Modal-->
+            <div class="create-issue hide">
+                <div class="section-create-issue">
+                    <div class="content-create-issue">
+                        <form action="#" novalidate class="info-task">
+                            <div class="title-task">
+                                Create issue
+                            </div>
+                            <div class="issue-task">
+                                <label class="type-task" for="type-task">Issue Type</label>
+                                <select name="issueType" id="type-task" class="select-type-task">
+                                    <option value="Task">Task</option>
+                                    <option value="Bug">Bug</option>
+                                    <option value="Story">Story</option>
+                                </select>
+                                <p class="placeholder-text">Start typing to get a list of possible matches.</p>
+                            </div>
+                            <hr class="delimiter">
+                            <div class="short-summary">
+                                <label class="type-task" for="summary">Short Summary</label>
+                                <div class="input-short-summary">
+                                    <input name="shortSummary" id="summary">
+                                </div>
+                                <p class="placeholder-text">Concisely summarize the issue in one or two
+                                    sentences.</p>
+                            </div>
+                            <div class="description">
+                                <label class="type-task" for="type-descr">Description</label>
+                                <div>
+                                    <textarea name="description"></textarea>
+                                </div>
+                                <p class="placeholder-text">Describe the issue in as much detail as you'd like.
+                                </p>
+                            </div>
+                            <div class="reporter">
+                                <label class="type-task" for="reporter">Reporter</label>
+                                <select name="reporter" id="reporter" class="select-type-task">
+                                    <option value="John Due">John Due</option>
+                                    <option value="Peter Bob">Peter Bobs</option>
+                                    <option value="Kim Further">Kim Further</option>
+                                </select>
+                            </div>
+                            <div class="assignees">
+                                <label class="type-task" for="assign">Assignees</label>
+                                <select name="asignees" id="assign" class="select-type-task">
+                                    <option selected="selected" style="color: rgba(0,0,0,0.5);" value="1">
+                                        Select
+                                    </option>
+                                    <option value="John Due">John Due</option>
+                                    <option value="Peter Bobs">Peter Bobs</option>
+                                    <option value="Kim Further">Kim Further</option>
+                                </select>
+                            </div>
+                            <div class="priority">
+                                <label class="type-task" for="prior">Priority</label>
+                                <select name="priority" id="prior" class="select-type-task">
+                                    <option selected="selected" style="color: rgba(0,0,0,0.5);" value="1">
+                                        Select
+                                    </option>
+                                    <option value="High">High</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Low">Low</option>
+                                    <option value="Lowest">Lowest</option>
+                                </select>
+                                <p class="placeholder-text">Priority in relation to other issues.</p>
+                            </div>
+                            <div class="btn-add">
+                                <button class="add" type="submit">
+                                    Create Issue
+                                </button>
+                                <button class="cancel">
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+
+
+
 
 
 
     <div id="preloader" aria-busy="true" aria-label="Loading, please wait." role="progressbar"></div>
 
 
-    <script src="./js/script.js"></script>
-    <script src="./js/preloader.js"></script>
+    <script src="./js/counterTasks.js"></script>
     <script src="./js/draganddrop.js"></script>
+    <script src="./js/preloader.js"></script>
+    <script src="./js/getTasks.js"></script>
+
+
+
 </body>
 
 </html>
